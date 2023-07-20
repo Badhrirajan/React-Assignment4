@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 
-export default function Pagecard({data = {}, handleAdd = (e) => {}, handleDelete = () => {}}) { 
+export default function Pagecard({data = {}, handleAdd = (e) => {}}) { 
 
   return (
     <div className="col mt-3 mb-3">
