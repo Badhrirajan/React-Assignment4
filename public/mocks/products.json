@@ -87,6 +87,27 @@
                 "https://i.dummyjson.com/data/products/5/2.jpg",
                 "https://i.dummyjson.com/data/products/5/3.jpg"
             ]
+        },
+        {
+            "id": 6,
+            "title": "Samsung Galaxy Z Flip3 5G",
+            "description": "6.7 inches, 101.6 cm2 (~82.5% screen-to-body ratio),Super AMOLED, 1.1 inches, 112 x 300 pixelsLi-Po 3300 mAh, non-removable",
+            "thumbnail": "https://m.media-amazon.com/images/I/417rGDOfx8L._SX300_SY300_QL70_FMwebp_.jpg",
+            "price": 95999
+        },
+        {
+            "id": 7,
+            "title": "Samsung Galaxy S22 Ultra 5G",
+            "description": "6.8 inches, 114.7 cm2 (~90.2% screen-to-body ratio),Dynamic AMOLED 2X, 120Hz, HDR10+, 1750 nits (peak),Li-Ion 5000 mAh, non-removable",
+            "thumbnail": "https://m.media-amazon.com/images/I/71J8tz0UeJL._SX679_.jpg",
+            "price": 131999
+        },
+        {
+            "id": 8,
+            "title": "Samsung Galaxy M13",
+            "description": "6.6 inches, 104.9 cm2 (~82.5% screen-to-body ratio),Glass front, plastic back, plastic frame,Dual SIM,Li-Po 5000 mAh, non-removable",
+            "thumbnail": "https://m.media-amazon.com/images/I/81Prc5i7hML._SX679_.jpg",
+            "price": 14999
         }
   ]
 }

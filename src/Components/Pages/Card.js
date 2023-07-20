@@ -5,8 +5,8 @@ export default function Pagecard({data = {}, handleAdd = (e) => {}}) {
 
   return (
     <div className="col mt-3 mb-3">
-                    <div className="card h-100">
-                        <img className="card-img-top" src={data.thumbnail} alt="product-image"/>
+                    <div className="card h-100" style={{width: "18rem"}}>
+                        <img className="card-img-top" src={data.thumbnail} style={{width:"100%", height: "200px"}} alt="products" />
                         <div className="card-body p-4">
                             <div className="text-center">
                                 <h5 className="fw-bolder"><p>{data.title}</p></h5>
