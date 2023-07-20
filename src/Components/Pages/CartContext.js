@@ -3,7 +3,8 @@ import React, { createContext, useContext, useState } from "react";
 const CartContext = createContext({
   cart: [],
   setCart: () => Promise,
-  handleQuantity: () => null
+  handleQuantity: () => null,
+  handleDeleteToCart: () => null
 });
 
 export const useCart = () => useContext(CartContext);
@@ -20,12 +21,19 @@ export default function CartContextProvider({ children }) {
         filteredData.quantity += 1
       }
       setCart(cartsCopy)
-    }      
+    }
+    
+    function handleDeleteToCart(id = 0){
+      let cartsCopy = [...cart]
+      let matchedData = cartsCopy.filter((d) => d.id !== id);
+      setCart(matchedData);
+  }
 
   const value = {
     cart,
     setCart,
     handleQuantity,
+    handleDeleteToCart
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }

@@ -4,7 +4,7 @@ import { useCart } from './CartContext'
 import CartBox from './CartBox';
 
 export default function Cart() {
-  const { cart = [], handleQuantity = () => { } } = useCart();
+  const { cart = [], handleQuantity = () => {}, handleDeleteToCart = () => {}} = useCart();
   return (
     <div>
       <div>
@@ -30,10 +30,10 @@ export default function Cart() {
     <div className='container'>
       <div className='continer-fluid'>
       <div className='row d-flex flex-wrap justify-content-center align-items-center'>
-        <div className='col-6 mt-2'>
+        <div className='col-6'>
         {
           cart.map((data, i) => 
-          <CartBox key={`cart-item-${i}`} data={data} handleAdd={handleQuantity}/>
+          <CartBox key={`cart-item-${i}`} data={data} handleAdd={handleQuantity} handleDelete={handleDeleteToCart}/>
           )}
           </div>
         </div>  

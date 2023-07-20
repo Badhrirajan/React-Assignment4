@@ -24,12 +24,6 @@ export default function Page(){
         setCart(selectedItem)
     }
 
-    function handleDeleteToCart(id = 0){
-        let cartsCopy = [...items]
-        let matchedData = cartsCopy.filter((d) => d.id === id);
-        setCart(matchedData);
-    }
-
     return (<section>
     <header className="bg-dark py-5">
             <div className="container px-4 px-lg-5 my-5">
@@ -44,7 +38,7 @@ export default function Page(){
         <div className="row">
             {
                 items && items.map((d,i) => (
-                    <Card key={`items-number-${i}`} data={d} handleAdd={handleAddToCart} handleDelete={handleDeleteToCart}/>
+                    <Card key={`items-number-${i}`} data={d} handleAdd={handleAddToCart}/>
                 ))
             }
         </div>
