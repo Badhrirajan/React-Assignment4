@@ -27,10 +27,9 @@ export default function Cart() {
         </div>   
     </nav>
     </div>
-    <div className='container'>
-      <div className='continer-fluid'>
-      <div className='row d-flex flex-wrap justify-content-center align-items-center'>
-        <div className='col-6'>
+    <div className='container-fluid mt-2'>
+      <div className='row'>
+        <div className='col-8 d-flex gap-2'>
         {
           cart.map((data, i) => 
           <CartBox key={`cart-item-${i}`} data={data} handleAdd={handleQuantity} handleDelete={handleDeleteToCart}/>
@@ -38,7 +37,6 @@ export default function Cart() {
           </div>
         </div>  
       </div>
-    </div>
-    </div>
+      </div>
   )
 }
