@@ -6,7 +6,7 @@ export default function CartBox({data = {},  handleAdd = () => {}, handleDelete 
       <div className='container-fluid'>
     <div className='row'>
     <div className='col-4'>
-      <div className='card mb-2'>
+      <div className='card mb-2' style={{width: "18rem"}}>
         <img src={data.thumbnail} alt="logo" />
         <p><b>Title</b>:{data.title}</p>
         <p><b>Price</b>:{data.price}</p>
