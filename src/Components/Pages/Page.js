@@ -7,7 +7,7 @@ export default function Page(){
     const {cart, setCart} = useCart()
 
     useEffect(() => {
-        fetch("http://localhost:3000/mocks/products.json")
+        fetch("/mocks/products.json")
         .then((response) => response.json())
         .then((result) => {
             if(result && result.products)
