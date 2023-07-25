@@ -1,10 +1,27 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { useCart } from './CartContext'
 import CartBox from './CartBox';
 
 export default function Cart() {
-  const { cart = [], handleQuantity = () => {}, handleDeleteToCart = () => {}} = useCart();
+  const { cart = [], setCart = () => {}, handleQuantity = () => {}, handleDeleteToCart = () => {}} = useCart();
+
+  function totalPrice(){
+    let totalAmount = 0;
+    let itemCopy = [...cart];
+    itemCopy.forEach((data) => {
+      totalAmount += data.price * data.quantity
+    })
+    return totalAmount;
+  }
+  const navigate = useNavigate()
+
+  function handleCheckout(){
+    alert("Thanks for puchasing with us!! Keep Supporting")
+    navigate("/")
+    setCart([])
+  }
+
   return (
     <div>
       <div>
@@ -29,11 +46,22 @@ export default function Cart() {
     </div>
     <div className='container-fluid mt-2'>
       <div className='row'>
-        <div className='col-8 d-flex gap-2'>
+        <div className='col-8 d-flex flex-wrap gap-2'>
         {
           cart.map((data, i) => 
           <CartBox key={`cart-item-${i}`} data={data} handleAdd={handleQuantity} handleDelete={handleDeleteToCart}/>
           )}
+          </div>
+          <div className='col-2'>
+            <div className='card'>
+              <div class="card-header">
+                Total Amount
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">Cart Price: {totalPrice()}</h6>
+                <button class="btn btn-primary" onClick={() => handleCheckout()}>Click here to Checkout</button>
+                </div>  
+            </div>
           </div>
         </div>  
       </div>
